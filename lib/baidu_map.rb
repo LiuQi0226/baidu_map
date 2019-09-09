@@ -24,9 +24,9 @@ module BaiduMap
                    when /^direction_.*/              # Route Martrix API
                      method_str.sub('_', "/v2/") + '?'
                    when 'geocoder'                   # Geocoding API
-                     method_str + '/v2/?'
+                     method_str + '/v3/?'
                    else                              #  /^place_.*/  --- Place API and Place Suggestion API
-                     method_str.sub('_', "/v2/") + '?'
+                     method_str.sub('_', "/v3/") + '?'
                    end
 
       full_url = endpoint + method_url + URI.encode_www_form(params.merge(ak: @ak, output: 'json'))
