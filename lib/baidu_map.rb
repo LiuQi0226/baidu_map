@@ -24,7 +24,7 @@ module BaiduMap
                    when /^direction_.*/              # Route Martrix API
                      method_str.sub('_', "/v2/") + '?'
                    when 'geocoder'                   # Geocoding API
-                     method_str + '/v3/?'
+                     'reverse_geocoding' + '/v3/?'
                    else                              #  /^place_.*/  --- Place API and Place Suggestion API
                      method_str.sub('_', "/v3/") + '?'
                    end
